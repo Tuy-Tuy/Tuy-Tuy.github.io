@@ -1,0 +1,71 @@
+<meta charset="utf-8">
+<style>
+img:active {
+	position: relative;
+	top: 10px;
+	left: 5px;
+}
+</style>
+
+<body background="fon.jpg">
+<center>
+<img src="maxresdefault.jpg" alt="Котик" width="500">
+</center>
+
+
+<h1 style="color:red;">Деньги:	<span id="score">0</span></h1>
+<h1 style="color:red;">Количество апгрейдов:<span id="upgrade">1</span></h1>
+<h1 style="color:blue;">Уровень:<span id="level">1</span></h1>
+<h1 style="color:green;">Стоимость следующего апгрейда: <span id="upgradeCost">10</span></h1>
+
+
+ 
+
+<img src="click-here-button-1487274_640.png" width="150" onclick="makeMoney()">
+<img style="visibility:hidden" src="ggggggg.png" width="150" onclick="up()" id="up"> 
+
+
+
+<script>
+money = 0;
+upgrade = 1;
+var upgradeCost = 10;
+var level = 1;
+var totalMoney = money;
+
+function makeMoney() {
+	money = money + upgrade;
+	totalMoney = totalMoney + upgrade;
+	if (totalMoney >= 100 && totalMoney < 500) {
+		level = 2;
+		document.getElementById('up').style.visibility = "visible";
+		}
+	if (totalMoney >= 500 && totalMoney < 700) level = 3;
+	if (totalMoney >= 700 && totalMoney < 1000) level = 4;
+	if (totalMoney >= 1000 && totalMoney < 1500) level = 5;
+	if (totalMoney >= 1500 && totalMoney < 3000) level = 6;
+	if (totalMoney >= 3000 && totalMoney < 5000) level = 7;
+	if (totalMoney >= 5000 && totalMoney < 7000) level = 8;
+
+
+	document.getElementById('level').innerHTML = level;
+	
+	document.getElementById('score').innerHTML = money;
+}
+
+function up() {
+if (money >= upgradeCost) {
+	money = money - upgradeCost;
+	upgrade = upgrade + 1;
+	upgradeCost = Math.floor(upgradeCost * 1.5);
+	document.getElementById('score').innerHTML = money;
+	document.getElementById('upgrade').innerHTML = upgrade;
+	document.getElementById('upgradeCost').innerHTML = upgradeCost;
+}
+
+	
+}
+
+
+</script>
+</body>

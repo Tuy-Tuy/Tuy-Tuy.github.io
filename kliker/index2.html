@@ -1,0 +1,38 @@
+<meta charset="utf-8">
+<body background="fon.jpg">
+<center>
+<img src="maxresdefault.jpg" alt="Котик" width="500">
+</center>
+
+
+<h1 style="color:red;">Деньги:	<span id="score">0</span></h1>
+<h1 style="color:red;">Апгрейд:<span id="upgrade">1</span></h1>
+
+<button height="50" onclick="makeMoney()">Нажми меня</button>
+<button onclick="up()">Апгрейд за 10 монет (+1)</button>
+<img src="click-here-button-1487274_640.png" width="150" onclick="makeMoney()">
+<img src="ggggggg.png" width="150" onclick="up()"> 
+
+<script>
+money = 0;
+upgrade = 1;
+
+function makeMoney() {
+	money = money + upgrade;
+	document.getElementById('score').innerHTML = money;
+}
+
+function up() {
+if (money >= 10) {
+	money = money - 10;
+	upgrade = upgrade + 1;
+	document.getElementById('score').innerHTML = money;
+	document.getElementById('upgrade').innerHTML = upgrade;
+}
+
+	
+}
+
+
+</script>
+</body>
